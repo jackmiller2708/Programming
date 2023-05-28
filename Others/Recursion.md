@@ -4,3 +4,8 @@ It can reduce the length of our code and make it easier to read and write.
 
 > [!warning]
 > Recursion uses more memory, because the recursive function adds to the stack with each recursive call, and keeps the values there until the call is finished.
+
+## Properties of Recursion
+- Performing the same operations multiple times with different inputs.
+- In every step, we try smaller inputs to make the problem smaller.
+- Base condition is needed to stop the recursion otherwise infinite loop will occur.
