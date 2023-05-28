@@ -59,3 +59,4 @@
 
 - Concepts
 	- [[Dynamic Programming]]
+	- [[Greedy Algorithm]]

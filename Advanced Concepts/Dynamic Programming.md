@@ -3,4 +3,4 @@ Dynamic programming is a technique where an algorithmic problem is first broken 
 ## Characteristics of Dynamic Programming Algorithm
 - The given problem can be broken up into smaller sub-problems, and these smaller subproblems can be divided into still smaller ones, and in this process, you see some overlapping subproblems.
 - The solution to the problem can be constructed from the solutions to the subproblems.
-- The optimal solutions to the subproblems contribute to the optimal solution of the given problem (referred to as the Optimal Substructure Property).
+- The optimal solutions to the subproblems contribute to the optimal solution of the given problem (referred to as the [[Optimal Structure|Optimal Substructure Property]]).
