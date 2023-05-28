@@ -114,7 +114,7 @@ For filling the second item in the bag: `i` = 2, `wi` = 2, `pi` = 15
 | 2     | 0 | 10 | 15 | 25 | 25 | 25 | 25 |
 | 3     |   |    |    |    |    |    |    |
 
-For filling the third item in the bag: `i` = 3 and w<sub>i</sub> = 3, profit = 40
+For filling the third item in the bag: `i` = 3 and `wi` = 3, `pi` = 40
 - when `j` = 2, then maximum possible profit is `DP[2][2] = 15` as we cannot put the element
 - when `j` = 3, then maximum possible profit is `max(DP[2][3], sum(DP[2][0], 40)) = 40`.
 - when `j` = 4, then maximum possible profit is `max(DP[2][4], sum(DP[2][1], 40)) = 50`.
