@@ -85,7 +85,7 @@ Then, we have to take a maximum of these two possibilities, respectively,
 
 So we take the maximum of these two possibilities to fill the current state.
 
-### Illustration
+#### Illustration
 > Let, `weight = [1, 2, 3]`, `profit = [10, 15, 40]`, `W = 6`.
 
 For filling the first item in the bag:  `i` = 1 and w<sub>i</sub> = 1, profit = 10
