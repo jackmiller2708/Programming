@@ -1,4 +1,4 @@
-**Dynamic programming** (DP) is a technique where an algorithmic problem is first broken down into sub-problems, the results are saved so the same problem will not have to be computed again, and then the sub-problems are optimized to find the overall solution — which usually has to do with finding the **maximum** and **minimum** range of the algorithmic query, so simply, it requires the use of previous states. 
+**Dynamic programming** (DP) is a technique where an algorithmic problem is first broken down into subproblems, the results are saved so the same problem will not have to be computed again, and then the subproblems are optimized to find the overall solution — which usually has to do with finding the **maximum** and **minimum** range of the algorithmic query, so simply, it requires the use of previous states. 
 
 ## Characteristics of DP problems
 - The given problem can be broken up into smaller subproblems, and these smaller subproblems can be divided into still smaller ones, and in this process, you see some [[Overlapping Subproblems|overlapping subproblems]].
