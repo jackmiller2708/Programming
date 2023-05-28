@@ -180,36 +180,29 @@ We implement the same logic but instead of recursion, we use iteration.
 
 ```JS
 function knapSack(W, weightArr, profitArr, N) {
-  const dp = new Array(N + 1);
+  // Making and initializing dp array
+  var dp = Array(W + 1).fill(0);
 
-  for (let index = 0; index <= N; index++) {
-    // Creates new set of results for each item.
-    dp[index] = new Array(W + 1);
-    
-    // Which is the current element real index
-    // as base case starts at 0 which introduces an ephemeral element.
-    const prevIndex = index - 1;
+  for (let index = 1; index < N + 1; index++) {
+    for (let weight = W; weight >= 0; weight--) {
+      if (weightArr[index - 1] <= weight) {
+        const prevIndex = index - 1;
+        const currProfit = profitArr[prevIndex];
+        const currWeight = weightArr[prevIndex];
 
-    for (let weight = 0; weight <= W; weight++) {
-      if (index == 0 || weight == 0) {
-        dp[index][weight] = 0;
-        continue;
+        const doNotFillVal = dp[weight];
+        const fillVal = dp[weight - currWeight] + currProfit;
+
+        // Finding the maximum value
+        dp[weight] = Math.max(fillVal, doNotFillVal);
       }
-
-      const currWeight = weightArr[prevIndex];
-      const doNotFillVal = dp[prevIndex][weight];
-
-      if (currWeight <= weight) {
-        const fillVal = profitArr[prevIndex] + dp[prevIndex][weight - currWeight];
-
-        dp[index][weight] = Math.max(fillVal, doNotFillVal);
-        continue;
-      }
-
-      dp[index][weight] = doNotFillVal;
     }
   }
 
-  return dp[N][W];
+  // Returning the maximum value of knapsack
+  return dp[W];
 }
 ```
+
+**Time Complexity:**` O(N * W)`. where `N` is the number of elements and `W` is capacity.   
+**Auxiliary Space:** `O(W)` As we are using a 1D array instead of a 2D array
