@@ -88,7 +88,7 @@ finally, we take the maximum of these two possibilities to fill the current stat
 > Let, `weight = [1, 2, 3]`, `profit = [10, 15, 40]`, `W = 6`.
 
 For filling the first item in the bag:  `i` = 1, `wi` = 1 and `pi` = 10
-- when `j` = 0, then at this capacity, the bag cannot hold any item to the maximum `pi` = 0
+- when `j` = 0, then at this capacity, the bag cannot hold any item so the maximum `pi` = 0
 - when `j` = 1, then the maximum profit can be `max(DP[1][1], sum(10, DP[0][0])) = 10`
 
 | i / j | 0 | 1  | 2  | 3  | 4  | 5  | 6  |
