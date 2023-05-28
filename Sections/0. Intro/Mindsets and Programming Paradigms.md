@@ -1,0 +1,27 @@
+_So what is this all about? Mindsets and programming paradigms? Do I have to think in a different way or learn a bunch of paradigms to be a good developer?_ - Those are the questions you might have asked yourself when reading the title. And to answer those questions in the most concise and cohesive way possible, YES. Well, unless you have already know what I'm about to share then you can just go ahead and skip this one and go straight to [[Big O Notation|Day 1]]. otherwise, welcome to your first day of being a better developer and, supposedly, a better person.
+
+## Mindsets
+Let me get started by giving you a little bit of context. When I first know what programming is, I often wonder "Why are the programs/websites in this country suck so much?". It was a question that up until recently did I have an answer. And the answer is that people here *__SUCK!!__*. Not in terms of personality, I mean there are some toxic people here and there, but in terms of their priorities and visions. For example, most people would work only to get the job done, not because they love to do programming, only because the job pays. And due to that, the quality of their code stops at just being "enough to solve the problem", meaning that they just want to solve the underlying problem and not knowing the [[Technical Debt|technical debt]] they create and that it would cost more time, effort and money to scale in either direction and maintain. And also, they are more likely to not learn anything new and over time, they would be come - what I'd like to call - [[Experienced Junior Developer|experienced junior developer]]. And worst of all, __*THEY ARE THE MAJORIRY!!*__
+
+I want you to ask yourself this - Do I want to be one of them? Are they who I want to work with? If they're the ones to be the large part of the industry then what can I do? - I do agree with you on one thing, the future looks a bit grim for us developers for the environment is at the lowest of qualities but worry not. My goal is to create a better community and help anyone who actually wants to be and change the future for the better.
+
+stories aside, so what are these "mindsets" that this section is about? Through the context that I have just given, it's clear to see that, all you need to do is to set a vision for yourself, do you want to progress further in your career path or just stay at one place a add to the problems that this industry is currently facing? How willing are you to commit to the betterment of yourself as a person and your skillset as a developer?
+
+I believe that when you have answered all these questions, you'll have a general idea of what you need to do.
+
+## Programming Paradigms
+With the mind is set, let's move on to how to do it. When it comes to programming, we often talk about the languages and the logics but rarely [[Programming Paradigms|the paradigms]]. 
+> [!info]
+> To understand programming paradigms is to understand the core of what programming is
+
+Here are some of them:
+1. **Imperative Programming**: This paradigm focuses on describing the steps or commands that a computer must execute to solve a problem. It emphasizes the control flow and state changes. Languages like C, Pascal, and assembly languages are primarily imperative.
+2. **Declarative Programming**: Declarative programming focuses on specifying what the program should accomplish rather than specifying how it should do it. It includes sub-paradigms like Logic Programming (e.g., Prolog) and Database Query Languages (e.g., SQL).
+3. **Object-Oriented Programming (OOP)**: OOP organizes software design around objects, which are instances of classes. It emphasizes encapsulation, inheritance, and polymorphism. Languages like Java, C++, and Python support OOP.
+4. **Functional Programming**: This paradigm treats computation as the evaluation of mathematical functions. It emphasizes immutability, pure functions, and avoids changing state and mutable data. Languages like Haskell, Lisp, and Erlang are functional programming languages.
+5. **Procedural Programming**: Procedural programming focuses on writing procedures or routines that perform operations on data. It is similar to imperative programming but emphasizes procedures rather than objects. C is a popular procedural programming language.
+7. **Event-Driven Programming**: In this paradigm, the program responds to events triggered by user actions or system events. It often involves the use of event loops and callbacks. JavaScript, used for web development, is an event-driven programming language.
+8. **Concurrent Programming**: Concurrent programming deals with designing programs that can execute multiple tasks simultaneously, potentially in parallel. It involves managing shared resources and synchronization between tasks. Languages like Java and Go have built-in support for concurrency.
+9. **Aspect-Oriented Programming (AOP)**: AOP aims to separate cross-cutting concerns, such as logging, authentication, and error handling, from the main program logic. It allows modularizing such concerns and applying them across different parts of the codebase.
+
+Above are just some examples of the common paradigms that you would encounter in your career path. Not only that, some of the design patterns that you will implement will enable a paradigm as a byproduct such as [[Observer|Observer Pattern]] will enable Reactive Programming.

@@ -1,0 +1,1 @@
+Technical debt -- or tech debt -- is **the implied cost incurred when businesses do not fix problems that will affect them in the future**. Accruing technical debt causes existing problems to get worse over time. The longer debt builds up, the more costly it becomes to rectify.

@@ -1,0 +1,1 @@
+A person who works in the industry for 3+ years but still only have the knowledge of a Junior Developer.
