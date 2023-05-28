@@ -51,10 +51,6 @@ we define our state by two parameters `index` and `weight` - i.e. `DP[index][
 
 Here `DP[index][weight]` tells us the maximum profit it can make by taking items from range `1` to `index` having the capacity of sack from range `1` to `W` to be `weight`. Therefore, here the parameters `index` and `weight` together can uniquely identify a subproblem for the Knapsack problem.
 
-If you're still confused then the subproblem is that
-
-> from item at `1` to `index`, what is the maximum profit consider the `weight` of that item plus the remaining weight capacity's profit based on the previously calculated items and the total capacity of the bag.
-
 ### Step 3: Formulating a relation among states
 This part is the _hardest_ part of solving a DP problem and requires a lot of intuition, observation, and **PRACTICE!!**
 #### How to compute state?
