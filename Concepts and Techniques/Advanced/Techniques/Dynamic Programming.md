@@ -79,8 +79,8 @@ Now two possibilities can take place for each `j` up to `W`:
 - **Case 2**: Do not fill the element in the given `j`.
 
 Then, we have to take a maximum of these two possibilities, respectively,
-- **Case 1**: if we fill the element in the given `j` => `DP[i][j]` = `sum(pi, DP[i - 1][j - wi])` .
-- **Case 2**: if we do not fill the element in the given `j` => `DP[i][j]` = `DP[i - 1][j]` .
+- **Case 1**: if we fill the element in the given `j` => `DP[i][j] = sum(pi, DP[i - 1][j - wi])` .
+- **Case 2**: if we do not fill the element in the given `j` => `DP[i][j] = DP[i - 1][j]` .
 
 finally, we take the maximum of these two possibilities to fill the current state.
 
