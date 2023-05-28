@@ -63,7 +63,7 @@ The state `DP[index][weight]` will denote the maximum of  the bag's `weight` cap
 > [!note]
 > Let's denote
 > - `i` as value of `index` - the item at `index`
-> - `j` as value from 1 to `W` -  the bag's capacity
+> - `j` as value from `1` to `W` -  the bag's capacity
 > - w<sub>i</sub> as value of `weight` of item at `index`
 
 Below is an illustration of how the states would look like:
