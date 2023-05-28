@@ -136,11 +136,12 @@ As can be seen from Step 3, there are repetitions of the same subproblem again a
 > If we get a subproblem the first time, we can solve this problem by creating a 2-D array that can store a particular state(n, w). Now if we come across the same state(n, w) again instead of calculating it in exponential complexity we can directly return its result stored in the table in constant time.
 
 ```JS 
-function knapSack(W, weight, profit, index, dp = undefined) {
+function knapSack(W, index, weight, profit, dp = undefined) {
   // Creates a 2D array to store the value should there is not already one.
+  // We plus one as the base case to be no item to be put in no bag where profit would be 0.
   const _dp = dp ?? new Array(N + 1).fill(-1).map(() => new Array(W + 1).fill(-1));
 
-  // Base condition
+  // Base case
   if (index == 0 || W == 0) {
     return 0;
   }
@@ -150,16 +151,17 @@ function knapSack(W, weight, profit, index, dp = undefined) {
     return _dp[index][W];
   }
 
-  // Previous Item's index
+  // Current Item's index counting from base case as 0
+  // where there is no element to be put in the bag
+  // and the first element - the real element - would be at index 1
   const prevIndex = index - 1;
 
-  // Previous Item's values
-  const prevWeight = weight[prevIndex];
-  const prevProfit = profit[prevIndex];
+  // current Item's values
+  const currWeight = weight[prevIndex];
+  const currProfit = profit[prevIndex];
 
   // Case when weight is filled in the column.
-  // Get the previous profit where the current weight fits the bag's capacity the plus the current weight
-  const fillVal = prevProfit + knapSack(W - prevWeight, prevIndex, weight, profit, _dp);
+  const fillVal = currProfit + knapSack(W - currWeight, prevIndex, weight, profit, _dp);
 
   // Case when weight is not filled in the column. Get the previous calculated profit.
   const doNotFillVal = knapSack(W, prevIndex, weight, profit, _dp);
@@ -183,7 +185,9 @@ function knapSack(W, weightArr, profitArr, N) {
   for (let index = 0; index <= N; index++) {
     // Creates new set of results for each item.
     dp[index] = new Array(W + 1);
-
+    
+    // Which is the current element real index
+    // as base case starts at 0 which introduces an ephemeral element.
     const prevIndex = index - 1;
 
     for (let weight = 0; weight <= W; weight++) {
@@ -192,15 +196,14 @@ function knapSack(W, weightArr, profitArr, N) {
         continue;
       }
 
-      const prevWeight = weightArr[prevIndex];
+      const currWeight = weightArr[prevIndex];
       const doNotFillVal = dp[prevIndex][weight];
 
-      if (prevWeight <= weight) {
-        const fillVal = profitArr[prevIndex] + dp[prevIndex][weight - prevWeight];
+      if (currWeight <= weight) {
+        const fillVal = profitArr[prevIndex] + dp[prevIndex][weight - currWeight];
 
         dp[index][weight] = Math.max(fillVal, doNotFillVal);
         continue;
-
       }
 
       dp[index][weight] = doNotFillVal;
