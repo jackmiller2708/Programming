@@ -183,12 +183,12 @@ function knapSack(W, weightArr, profitArr, N) {
   var dp = Array(W + 1).fill(0);
 
   for (let index = 1; index < N + 1; index++) {
+	const prevIndex = index - 1;
+	const currProfit = profitArr[prevIndex];
+    const currWeight = weightArr[prevIndex];
+    
     for (let weight = W; weight >= 0; weight--) {
-      if (weightArr[index - 1] <= weight) {
-        const prevIndex = index - 1;
-        const currProfit = profitArr[prevIndex];
-        const currWeight = weightArr[prevIndex];
-
+      if (currWeight <= weight) {
         const doNotFillVal = dp[weight];
         const fillVal = dp[weight - currWeight] + currProfit;
 
