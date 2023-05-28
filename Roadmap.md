@@ -1,4 +1,7 @@
  This will be a roadmap for programming in general and not actually tied down to a specific field.
+ 
+ ---
+## Chapter 1: Fundamentals of Programming
 
 - Section 0: Intro
 	- Day 0: [[Mindsets and Programming Paradigms]]
@@ -50,3 +53,9 @@
 		- Day 35: [[Dirty Flag]]
 		- Day 36: [[Object Pool]]
 		- Day 37: [[Spatial Paritition]]
+
+---
+## Chapter 2: Advanced
+
+- Concepts
+	- [[Dynamic Programming]]
