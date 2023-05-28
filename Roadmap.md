@@ -55,8 +55,11 @@
 		- Day 37: [[Spatial Paritition]]
 
 ---
-## Chapter 2: Advanced
+## Chapter 2: Advanced Concepts and Techniques
 
-- Concepts
+- Techniques
 	- [[Dynamic Programming]]
 	- [[Greedy Algorithm]]
+- Concepts
+	- [[Optimal Structure]]
+	- [[Overlapping Subproblems]]
