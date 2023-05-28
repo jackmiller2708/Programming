@@ -37,7 +37,7 @@ For example, in the famous **Knapsack problem**,
 > **Note:** The constraint here is we can either put an item completely into the bag or cannot put it at all - _It is not possible to put a part of an item into the bag_.
 > 
 > **Example**:
-> - **Input**: `W = 4, profit = [1, 2, 3], weight = [4, 5, 1]`
+> - **Input**: `W = 4, N = 3, profit = [1, 2, 3], weight = [4, 5, 1]`
 > - **Output**: `3`
 > - **Explanation:** There are two items which have weight less than or equal to `4`. If we select the item with weight `4`, the possible profit is `1`. And if we select the item with weight `1`, the possible profit is `3`. So the maximum possible profit is `3`. Note that we cannot put both the items with weight `4` and `1` together as the capacity of the bag is `4`.
 
@@ -45,13 +45,15 @@ A simple solution is to consider all subsets of items and calculate the total we
 
 _**Optimal Substructure**_**:** To consider all subsets of items, there can be two cases for every item. 
 - **Case 1:** The item is included in the optimal subset.
-- **Case 2:** The item is not included in the optimal subset.
+- **Case 2:** The item is not included in the optimal subset.
 
-we define our state by two parameters `index` and `weight` - i.e. `DP[index][weight]`. Here `DP[index][weight]` tells us the maximum profit it can make by taking items from range `1` to `index` having the capacity of sack from range `1` to `W` to be `weight`. Therefore, here the parameters `index` and `weight` together can uniquely identify a subproblem for the Knapsack problem.
+we define our state by two parameters `index` and `weight` - i.e. `DP[index][weight]`. 
+
+Here `DP[index][weight]` tells us the maximum profit it can make by taking items from range `1` to `index` having the capacity of sack from range `1` to `W` to be `weight`. Therefore, here the parameters `index` and `weight` together can uniquely identify a subproblem for the Knapsack problem.
 
 If you're still confused then the subproblem is that
 
-> from item at `0` to `index`, what is the maximum profit consider the `weight` of that item plus the remaining weight capacity's profit based on the previously calculated items.
+> from item at `1` to `index`, what is the maximum profit consider the `weight` of that item plus the remaining weight capacity's profit based on the previously calculated items and the total capacity of the bag.
 
 ### Step 3: Formulating a relation among states
 This part is the _hardest_ part of solving a DP problem and requires a lot of intuition, observation, and **PRACTICE!!**
@@ -62,9 +64,10 @@ The state `DP[index][weight]` will denote the maximum of  the bag's `weight` cap
 
 > [!note]
 > Let's denote
-> - `i` as value of `index` - the item at `index`
-> - `j` as value from `1` to `W` -  the bag's capacity
-> - w<sub>i</sub> as value of `weight` of item at `index`
+> - `i` as value of the `index`
+> - `j` as value from `0` to `W` 
+> - `wi` as value of item's weight at `index`
+> - `pi` as value of item's profit at `index`
 
 Below is an illustration of how the states would look like:
 
@@ -76,21 +79,21 @@ Below is an illustration of how the states would look like:
 | N     |   |   |     |   |
 
 Now two possibilities can take place for each `j` up to `W`:
-- **Case 1**: Fill w<sub>i</sub> in the given `j`.
-- **Case 2**: Do not fill w<sub>i</sub> in the given `j`.
+- **Case 1**: Fill the element in the given `j`.
+- **Case 2**: Do not fill the element in the given `j`.
 
 Then, we have to take a maximum of these two possibilities, respectively,
-- **Case 1**: if we fill the w<sub>i</sub> in the given `j`, `DP[i][j]` will be equal to the value of (`i` + value of the column 'j - w<sub>i</sub>') in `DP[i - 1]`.
-- **Case 2**: if we do not fill the w<sub>i</sub> in the given `j`, then the `DP[i][j]` state will be the same as `DP[i - 1][j]` .
+- **Case 1**: if we fill the element in the given `j` => `DP[i][j]` = `sum(pi, DP[i - 1][j - wi])` .
+- **Case 2**: if we do not fill the element in the given `j` => `DP[i][j]` = `DP[i - 1][j]` .
 
-So we take the maximum of these two possibilities to fill the current state.
+finally, we take the maximum of these two possibilities to fill the current state.
 
 #### Illustration
 > Let, `weight = [1, 2, 3]`, `profit = [10, 15, 40]`, `W = 6`.
 
-For filling the first item in the bag:  `i` = 1 and w<sub>i</sub> = 1, profit = 10
-- when `j` = 0, then at this capacity, the bag cannot hold any item to the maximum profit = 0
-- when `j` = 1, then the maximum profit can only be 10 as it can only hold this item
+For filling the first item in the bag:  `i` = 1, `wi` = 1 and `pi` = 10
+- when `j` = 0, then at this capacity, the bag cannot hold any item to the maximum `pi` = 0
+- when `j` = 1, then the maximum profit can be `max(DP[1][1], sum(10, DP[0][0])) = 10`
 
 | i / j | 0 | 1  | 2  | 3  | 4  | 5  | 6  |
 |-------| - | -- | -- | -- | -- | -- | -- |
@@ -99,10 +102,10 @@ For filling the first item in the bag:  `i` = 1 and w<sub>i</sub> = 1, profit = 
 | 2     |   |    |    |    |    |    |    |
 | 3     |   |    |    |    |    |    |    |
 
-For filling the second item in the bag: `i` = 2 and w<sub>i</sub> = 2, profit = 15
-- when `j` = 1, then maximum possible profit is `DP[1][1] = 10` as we do not fill w<sub>i</sub> in the column
-- when `j` = 2, then maximum possible profit is `max(10, DP[1][2-2] + 15) = max(10, 15) = 15`.
--  when `j` = 3, then maximum possible profit is `max(1 not put, 1 is put into bag) = max(DP[1][3], DP[1][3-2] + 15) = max(10, 25) = 25`.
+For filling the second item in the bag: `i` = 2, `wi` = 2, `pi` = 15
+- when `j` = 1, then maximum possible profit is `DP[1][1] = 10` as we cannot put the element.
+- when `j` = 2, then maximum possible profit is `max(DP[1][2], sum(DP[1][0], 15)) = 15`.
+- when `j` = 3, then maximum possible profit is `max(DP[1][3], sum(DP[1][1], 15)) = 25`.
 
 | i / j | 0 | 1  | 2  | 3  | 4  | 5  | 6  |
 |-------| - | -- | -- | -- | -- | -- | -- |
@@ -112,11 +115,11 @@ For filling the second item in the bag: `i` = 2 and w<sub>i</sub> = 2, profit = 
 | 3     |   |    |    |    |    |    |    |
 
 For filling the third item in the bag: `i` = 3 and w<sub>i</sub> = 3, profit = 40
-- when `j` = 2, then maximum possible profit is `DP[2][2] = 15` as we do not fill w<sub>i</sub> in the column
-- when `j` = 3, then maximum possible profit is `max(25, DP[2][3-3] + 40) = max(25, 40) = 40`.
-- when `j` = 4, then maximum possible profit is `max(25, DP[2][4-3] + 40) = max(25, 50) = 50`.
-- when `j` = 5, then maximum possible profit is `max(25, DP[2][5-3] + 40) = max(25, 55) = 55`.
-- when `j` = 6, then maximum possible profit is `max(25, DP[2][6-3] + 40) = max(25, 65) = 65`.
+- when `j` = 2, then maximum possible profit is `DP[2][2] = 15` as we cannot put the element
+- when `j` = 3, then maximum possible profit is `max(DP[2][3], sum(DP[2][0], 40)) = 40`.
+- when `j` = 4, then maximum possible profit is `max(DP[2][4], sum(DP[2][1], 40)) = 50`.
+- when `j` = 5, then maximum possible profit is `max(DP[2][5], sum(DP[2][2], 40)) = 55`.
+- when `j` = 6, then maximum possible profit is `max(DP[2][6], sum(DP[2][3], 40)) = 65`.
 
 | i / j | 0 | 1  | 2  | 3  | 4  | 5  | 6  |
 |-------| - | -- | -- | -- | -- | -- | -- |
