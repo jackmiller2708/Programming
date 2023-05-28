@@ -47,7 +47,7 @@ _**Optimal Substructure**_**:** To consider all subsets of items, there can be 
 - **Case 1:** The item is included in the optimal subset.
 - **Case 2:** The item is not included in the optimal subset.
 
-we define our state by two parameters `index` and `weight` - i.e. `DP[index][weight]`. Here `DP[index][weight]` tells us the maximum profit it can make by taking items from range `0` to `index` having the capacity of sack from range `1` to `W` to be `weight`. Therefore, here the parameters `index` and `weight` together can uniquely identify a subproblem for the Knapsack problem.
+we define our state by two parameters `index` and `weight` - i.e. `DP[index][weight]`. Here `DP[index][weight]` tells us the maximum profit it can make by taking items from range `1` to `index` having the capacity of sack from range `1` to `W` to be `weight`. Therefore, here the parameters `index` and `weight` together can uniquely identify a subproblem for the Knapsack problem.
 
 If you're still confused then the subproblem is that
 
@@ -58,7 +58,7 @@ This part is the _hardest_ part of solving a DP problem and requires a lot of in
 #### How to compute state?
 Let us go back the the Knapsack problem's state. 
 
-The state `DP[index][weight]` will denote the maximum of  the bag's `weight` capacity considering all values from `0` to `index`. So if we consider the `weight` of item at `index` we can fill it in <u>**ALL**</u> columns which have the bag's `weight` capacity > item's `weight`.  
+The state `DP[index][weight]` will denote the maximum of  the bag's `weight` capacity considering all values from `1` to `index`. So if we consider the `weight` of item at `index` we can fill it in <u>**ALL**</u> columns which have the bag's `weight` capacity > item's `weight`.  
 
 > [!note]
 > Let's denote
