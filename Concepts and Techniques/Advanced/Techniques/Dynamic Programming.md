@@ -87,9 +87,9 @@ finally, we take the maximum of these two possibilities to fill the current stat
 #### Illustration
 > Let, `weight = [1, 2, 3]`, `profit = [10, 15, 40]`, `W = 6`.
 
-For filling the first item in the bag:  `i` = 1, `wi` = 1 and `pi` = 10
-- when `j` = 0, then at this capacity, the bag cannot hold any item so the maximum `pi` = 0
-- when `j` = 1, then the maximum profit can be `max(DP[1][1], sum(10, DP[0][0])) = 10`
+For filling the first item in the bag:  `i = 1`, `wi = 1` and `pi = 10`
+- when `j = 0`, then at this capacity, the bag cannot hold any item so the maximum `pi = 0` 
+- when `j = 1`, then the maximum profit can be `max(DP[1][1], sum(10, DP[0][0])) = 10`
 
 | i / j | 0 | 1  | 2  | 3  | 4  | 5  | 6  |
 |-------| - | -- | -- | -- | -- | -- | -- |
@@ -98,10 +98,10 @@ For filling the first item in the bag:  `i` = 1, `wi` = 1 and `pi` = 10
 | 2     |   |    |    |    |    |    |    |
 | 3     |   |    |    |    |    |    |    |
 
-For filling the second item in the bag: `i` = 2, `wi` = 2, `pi` = 15
-- when `j` = 1, then maximum possible profit is `DP[1][1] = 10` as we cannot put the element.
-- when `j` = 2, then maximum possible profit is `max(DP[1][2], sum(DP[1][0], 15)) = 15`.
-- when `j` = 3, then maximum possible profit is `max(DP[1][3], sum(DP[1][1], 15)) = 25`.
+For filling the second item in the bag: `i = 2`, `wi = 2`, `pi = 15`
+- when `j = 1`, then maximum possible profit is `DP[1][1] = 10` as we cannot put the element.
+- when `j = 2`, then maximum possible profit is `max(DP[1][2], sum(DP[1][0], 15)) = 15`.
+- when `j = 3`, then maximum possible profit is `max(DP[1][3], sum(DP[1][1], 15)) = 25`.
 
 | i / j | 0 | 1  | 2  | 3  | 4  | 5  | 6  |
 |-------| - | -- | -- | -- | -- | -- | -- |
@@ -110,12 +110,12 @@ For filling the second item in the bag: `i` = 2, `wi` = 2, `pi` = 15
 | 2     | 0 | 10 | 15 | 25 | 25 | 25 | 25 |
 | 3     |   |    |    |    |    |    |    |
 
-For filling the third item in the bag: `i` = 3 and `wi` = 3, `pi` = 40
-- when `j` = 2, then maximum possible profit is `DP[2][2] = 15` as we cannot put the element
-- when `j` = 3, then maximum possible profit is `max(DP[2][3], sum(DP[2][0], 40)) = 40`.
-- when `j` = 4, then maximum possible profit is `max(DP[2][4], sum(DP[2][1], 40)) = 50`.
-- when `j` = 5, then maximum possible profit is `max(DP[2][5], sum(DP[2][2], 40)) = 55`.
-- when `j` = 6, then maximum possible profit is `max(DP[2][6], sum(DP[2][3], 40)) = 65`.
+For filling the third item in the bag: `i = 3` and `wi = 3`, `pi = 40`
+- when `j = 2`, then maximum possible profit is `DP[2][2] = 15` as we cannot put the element
+- when `j = 3`, then maximum possible profit is `max(DP[2][3], sum(DP[2][0], 40)) = 40`.
+- when `j = 4`, then maximum possible profit is `max(DP[2][4], sum(DP[2][1], 40)) = 50`.
+- when `j = 5`, then maximum possible profit is `max(DP[2][5], sum(DP[2][2], 40)) = 55`.
+- when `j = 6`, then maximum possible profit is `max(DP[2][6], sum(DP[2][3], 40)) = 65`.
 
 | i / j | 0 | 1  | 2  | 3  | 4  | 5  | 6  |
 |-------| - | -- | -- | -- | -- | -- | -- |
