@@ -1,0 +1,3 @@
+Boilerplate code is probably the biggest offender when it comes to the signal-to-noise ratio. Boilerplate code is “noise” that is required to get the program to compile. Boilerplate code takes time to write and makes the codebase less readable because of the added noise.
+
+While “program to an interface, not to an implementation” is the recommended approach in OOP, not everything should become an interface. We’d have to resort to using interfaces in the entire codebase, for the sole purpose of testability. We’d also probably have to make use of dependency injection, which further introduced unnecessary complexity.
