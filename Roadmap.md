@@ -1,7 +1,7 @@
- This will be a roadmap for programming in general and not actually tied down to a specific field.
+ This will be a roadmap for programming in general that would be a guide for progressing the software engineer ladder.
  
  ---
-## Chapter 1: Fundamentals of Programming
+## Chapter 1: Fundamentals
 
 - Section 0: Intro
 	- Day 0: [[Mindsets and Programming Paradigms]]
@@ -63,3 +63,47 @@
 - Concepts
 	- [[Optimal Structure]]
 	- [[Overlapping Subproblems]]
+
+---
+## Chapter 3: Engineer Levels
+
+The software engineer title could be broken down into five levels:
+
+- [ ] Entry-level
+	- [ ] Programming Languages proficiency (OOP preferred)
+	- [ ] Understanding of Data Structures and Algorithms.
+	- [ ] Basic debugging and troubleshooting.
+	- [ ] Knowledge of Web technologies.
+	- [ ] Knowledge of database technologies.
+	- [ ] Knowledge of version control systems.
+	- [ ] Knowledge of software testing principles
+	- [ ] Work collaboratively in a team and communicate effectively (Interpersonal)
+- [ ] Mid-level
+	- [ ] Strong proficiency in programming languages and frameworks.
+	- [ ] Deep understanding of data structures, algorithms, and software design patterns.
+	- [ ] Advanced debugging and troubleshooting skills.
+	- [ ] Ability to mentor junior engineers and contribute to technical decision-making.
+- [ ] Senior
+	- [ ] Advanced proficiency in programming languages and architectures.
+	- [ ] Mastery of software design principles and advanced patterns.
+	- [ ] Expertise in system design, scalability, and performance optimization.
+	- [ ] Strong leadership and mentoring capabilities.
+	- [ ] Security Awareness.
+	- [ ] In-depth knowledge of testing strategies and quality assurance practices
+	- [ ] DevOps and Continuous Integration/Deployment (CI/CD).
+	- [ ] Leadership and Mentoring.
+	- [ ] Ability to guide technical strategy and collaborate across teams
+- [ ] Staff
+	- [ ] Technical leadership and guidance for the engineering team.
+	- [ ] Expertise in architectural design and system thinking
+	- [ ] Deep understanding of scalability, performance, and security
+	- [ ] Cross-functional collaboration and effective communication
+	- [ ] Technical strategy development and roadmap planning
+	- [ ] Mentorship and support for professional growth
+- [ ] Principle
+	- [ ] Mastery in a specific domain or technology stack.
+	- [ ] Architectural leadership and innovation.
+	- [ ] Strategic technical planning aligned with business goals.
+	- [ ] Cross-functional collaboration and influencing technical decisions.
+	- [ ] Mentorship and development of engineering talent.
+	- [ ] Thought leadership, industry engagement, and research contribution.
