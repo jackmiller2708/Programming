@@ -1,0 +1,1 @@
+Client-side rendering (CSR) is a technique for rendering web pages in the client's browser. This means that the browser is responsible for loading the page's HTML, CSS, and JavaScript, and then rendering the page's content.

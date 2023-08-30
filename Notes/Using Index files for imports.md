@@ -1,0 +1,1 @@
+There will be some overhead when using `index` file as an entry point for other files to import. Best to avoid.

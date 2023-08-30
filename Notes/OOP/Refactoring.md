@@ -1,6 +1,6 @@
 Refactoring is an important part of a developer’s day-to-day job. Ironically, OOP code is notoriously hard to refactor. Refactoring is supposed to make the code less complex, and more maintainable. On the contrary, refactored OOP code becomes significantly more complex — to make the code testable, we’d have to make use of dependency injection, and create an interface for the refactored class. Even then, refactoring OOP code is really hard without dedicated tools like Resharper.
 
-In the simple example above, the line count has more than doubled just to extract a single method. Why does refactoring create even more complexity, when the code is being refactored in 
+In the simple example below, the line count has more than doubled just to extract a single method. Why does refactoring create even more complexity, when the code is being refactored in 
 order to decrease complexity in the first place?
 
 ```Csharp

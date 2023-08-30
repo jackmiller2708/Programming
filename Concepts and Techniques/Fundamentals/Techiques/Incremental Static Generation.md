@@ -1,0 +1,1 @@
+Incremental Static Generation (ISR) is a technique that can be used to update static sites without having to rebuild the entire site. ISR works by only regenerating the pages that have changed since the last time the site was updated. This can save time and resources, especially for large sites.

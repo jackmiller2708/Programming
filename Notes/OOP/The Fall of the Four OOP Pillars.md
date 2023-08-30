@@ -22,7 +22,7 @@ Functional programming, on the other hand, allows us to achieve the same polymor
 
 ## Encapsulation
 
-As we discussed earlier, encapsulation is [[The Trojan Horse of Encapsulation|the trojan horse of OOP]]. It is actually a glorified global mutable state and makes the _unsafe_ code appear safe. An unsafe coding practice is a pillar that OOP programmers rely on in their day-to-day job…
+Encapsulation is [[The Trojan Horse of Encapsulation|the trojan horse of OOP]]. It is actually a glorified global mutable state and makes the _unsafe_ code appear safe. An unsafe coding practice is a pillar that OOP programmers rely on in their day-to-day job…
 
 ## Abstraction
 

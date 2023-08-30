@@ -10,7 +10,7 @@ Some might disagree, but OOP code is notoriously difficult to unit test. Unit Te
 
 How much more complexity has to be created just to make a piece of code testable? How much time was wasted just to make some code testable?
 
-> PS we’d also have to instantiate the entire class in order to test a single method. This will also bring in the code from all of its parent classes.
+> PS: we’d also have to instantiate the entire class in order to test a single method. This will also bring in the code from all of its parent classes.
 
 With OOP, writing tests for legacy code is even harder — almost impossible. Entire companies have been created around the issue of testing legacy OOP code.
 
@@ -18,4 +18,4 @@ With OOP, writing tests for legacy code is even harder — almost impossible. En
 
 Some people say that private methods shouldn’t be tested… I tend to disagree, unit testing is called “unit” for a reason — test small units of code in isolation. Yet testing of private methods in OOP is nearly impossible. We shouldn’t be making private methods `internal` just for the sake of testability.
 
-In order to achieve testability of private methods, they usually have to be extracted into a separate object. This, in turn, introduces unnecessary complexity and boilerplate code.
+In order to achieve testability of private methods, they usually have to be extracted into a separate object. This, in turn, introduces unnecessary complexity and [[Boilerplate code|boilerplate code]].
