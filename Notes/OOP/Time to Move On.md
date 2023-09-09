@@ -1,6 +1,4 @@
-> We now know that OOP is an experiment that failed. It is time to move on. It is time that we, as a community, admit that this idea has failed us, and we must give up on it.
-> 
-> - Lawrence Krubner
+> We now know that OOP is an experiment that failed. It is time to move on. It is time that we, as a community, admit that this idea has failed us, and we must give up on it.  - Lawrence Krubner
 
 Why are we stuck using something that fundamentally is a suboptimal way to organize programs? Is this plain ignorance? I doubt it, the people working in software engineering aren’t stupid. Are we perhaps more worried about “looking smart” in the face of our peers by making use of fancy OOP terms like “design patterns”, “abstraction”, “encapsulation”, “polymorphism” and “interface segregation”? Probably not.
 
